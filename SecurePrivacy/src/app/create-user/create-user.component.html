@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required [(ngModel)]="user.name" name="name" />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required [(ngModel)]="user.email" name="email" />
+    </div>
+    <div>
+      <input type="checkbox" id="consent" [(ngModel)]="user.consentToDataCollection" name="consentGiven" />
+      <label for="consent">I consent to my data being stored</label>
+    </div>
+    <button type="submit" [disabled]="!userForm.form.valid">Create User</button>
+  </form>
